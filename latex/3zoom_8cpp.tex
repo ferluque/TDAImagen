@@ -1,0 +1,110 @@
+\hypertarget{3zoom_8cpp}{}\section{Referencia del Archivo src/3zoom.cpp}
+\label{3zoom_8cpp}\index{src/3zoom.\+cpp@{src/3zoom.\+cpp}}
+
+
+Fichero con la función zoom y su prueba.  
+
+
+{\ttfamily \#include \char`\"{}Imagen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}imagen\+E\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Dependencia gráfica adjunta para 3zoom.cpp\+:
+% FIG 0
+\subsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCoordPixel}{Coord\+Pixel}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structCoordPixel}{Coord\+Pixel}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classImagen}{Imagen} \hyperlink{3zoom_8cpp_adb42a74fbb2b7d676e47dab7a4f07f63}{Zoom} (const \hyperlink{classImagen}{Imagen} \&original, const \hyperlink{structCoordPixel}{Coord\+Pixel} \&superior\+\_\+izq, const \hyperlink{structCoordPixel}{Coord\+Pixel} \&inferior\+\_\+dcha)
+\begin{DoxyCompactList}\small\item\em Zoom. \end{DoxyCompactList}\item 
+byte \hyperlink{3zoom_8cpp_aed2a684b88c69e55bbbd67c839987960}{Media} (const byte uno, const byte otro)
+\begin{DoxyCompactList}\small\item\em Función que evalúa la media entre dos variables tipo byte. \end{DoxyCompactList}\item 
+int \hyperlink{3zoom_8cpp_ae3d191cbd032819070b789079ea0faaf}{main} (int nargs, char $\ast$args\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em main de zoom \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Fichero con la función zoom y su prueba. 
+
+\begin{DoxyAuthor}{Autor}
+Fernando Luque (\href{mailto:fl1562001@correo.ugr.es}{\tt fl1562001@correo.\+ugr.\+es}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+Octubre 2020
+\end{DoxyDate}
+Para llamar al ejecutable correspondiente $<$ruta\+\_\+ejecutable$>$ $<$imagen\+\_\+origen$>$ $<$x\+\_\+1$>$ $<$y\+\_\+1$>$ $<$x\+\_\+2$>$ $<$y\+\_\+2$>$ $<$imagen\+\_\+destino$>$ 
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{3zoom_8cpp_ae3d191cbd032819070b789079ea0faaf}\label{3zoom_8cpp_ae3d191cbd032819070b789079ea0faaf}} 
+\index{3zoom.\+cpp@{3zoom.\+cpp}!main@{main}}
+\index{main@{main}!3zoom.\+cpp@{3zoom.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{nargs,  }\item[{char $\ast$}]{args\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+main de zoom 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nargs} & El número de argumentos \\
+\hline
+{\em args} & El array de cadenas de caracteres (argumentos) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+0 Si correcto -\/1 Si hay problema con la cantidad de argumentos
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Ver también}
+\hyperlink{1umbralizar_8cpp}{1umbralizar.\+cpp} El procedimiento para la entrada salida es similar al seguido en el \hyperlink{3zoom_8cpp_ae3d191cbd032819070b789079ea0faaf}{main} de \hyperlink{1umbralizar_8cpp}{1umbralizar.\+cpp}.~\newline
+Como especificaciones, he usado la clase Punto2D para representar los dos puntos de inicio y fin de la imagen ampliada 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{3zoom_8cpp_aed2a684b88c69e55bbbd67c839987960}\label{3zoom_8cpp_aed2a684b88c69e55bbbd67c839987960}} 
+\index{3zoom.\+cpp@{3zoom.\+cpp}!Media@{Media}}
+\index{Media@{Media}!3zoom.\+cpp@{3zoom.\+cpp}}
+\subsubsection{\texorpdfstring{Media()}{Media()}}
+{\footnotesize\ttfamily byte Media (\begin{DoxyParamCaption}\item[{const byte}]{uno,  }\item[{const byte}]{otro }\end{DoxyParamCaption})}
+
+
+
+Función que evalúa la media entre dos variables tipo byte. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em uno} & Un valor \\
+\hline
+{\em otro} & El otro valor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+(uno+otro)/2 
+\end{DoxyReturn}
+\mbox{\Hypertarget{3zoom_8cpp_adb42a74fbb2b7d676e47dab7a4f07f63}\label{3zoom_8cpp_adb42a74fbb2b7d676e47dab7a4f07f63}} 
+\index{3zoom.\+cpp@{3zoom.\+cpp}!Zoom@{Zoom}}
+\index{Zoom@{Zoom}!3zoom.\+cpp@{3zoom.\+cpp}}
+\subsubsection{\texorpdfstring{Zoom()}{Zoom()}}
+{\footnotesize\ttfamily \hyperlink{classImagen}{Imagen} Zoom (\begin{DoxyParamCaption}\item[{const \hyperlink{classImagen}{Imagen} \&}]{original,  }\item[{const \hyperlink{structCoordPixel}{Coord\+Pixel} \&}]{superior\+\_\+izq,  }\item[{const \hyperlink{structCoordPixel}{Coord\+Pixel} \&}]{inferior\+\_\+dcha }\end{DoxyParamCaption})}
+
+
+
+Zoom. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em original} & La imagen a la que se hará zoom \\
+\hline
+{\em superior\+\_\+izq} & El pixel (x\+\_\+1, y\+\_\+1) \\
+\hline
+{\em inferior\+\_\+dcha} & El pixel (x\+\_\+2, y\+\_\+2) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+superior\+\_\+izq.\+x $<$ inferior\+\_\+dcha.\+x \&\& superior\+\_\+izq.\+y $<$ inferior\+\_\+dcha.\+y 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Devuelve}
+El fragmento de imagen con un zoom x2
+\end{DoxyReturn}
+Función que devuelve un zoom de la imagen desde un pixel (x\+\_\+1, y\+\_\+2) hasta un pixel (x\+\_\+2, y\+\_\+2), ampliada x2 

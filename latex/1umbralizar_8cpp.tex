@@ -1,0 +1,76 @@
+\hypertarget{1umbralizar_8cpp}{}\section{Referencia del Archivo src/1umbralizar.cpp}
+\label{1umbralizar_8cpp}\index{src/1umbralizar.\+cpp@{src/1umbralizar.\+cpp}}
+
+
+Fichero con la función umbralizar y su prueba.  
+
+
+{\ttfamily \#include \char`\"{}Imagen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}imagen\+E\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Dependencia gráfica adjunta para 1umbralizar.cpp\+:
+% FIG 0
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classImagen}{Imagen} \hyperlink{1umbralizar_8cpp_a22ca53c3d563431b6c6f39628cd8f701}{umbralizar} (const \hyperlink{classImagen}{Imagen} \&original, const byte T\+\_\+1, const byte T\+\_\+2)
+\begin{DoxyCompactList}\small\item\em Umbralizar. \end{DoxyCompactList}\item 
+int \hyperlink{1umbralizar_8cpp_ae3d191cbd032819070b789079ea0faaf}{main} (int nargs, char $\ast$args\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em main de umbralización \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Fichero con la función umbralizar y su prueba. 
+
+\begin{DoxyAuthor}{Autor}
+Fernando Luque (\href{mailto:fl1562001@correo.ugr.es}{\tt fl1562001@correo.\+ugr.\+es}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+Octubre 2020
+\end{DoxyDate}
+Para llamar al ejecutable correspondiente $<$ruta\+\_\+ejecutable$>$ $<$imagen\+\_\+origen$>$ $<$umbral\+\_\+min$>$ $<$umbral\+\_\+max$>$ $<$imagen\+\_\+destino$>$ 
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{1umbralizar_8cpp_ae3d191cbd032819070b789079ea0faaf}\label{1umbralizar_8cpp_ae3d191cbd032819070b789079ea0faaf}} 
+\index{1umbralizar.\+cpp@{1umbralizar.\+cpp}!main@{main}}
+\index{main@{main}!1umbralizar.\+cpp@{1umbralizar.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{nargs,  }\item[{char $\ast$}]{args\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+main de umbralización 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nargs} & El número de argumentos \\
+\hline
+{\em args} & Un vector de cadenas de caracteres (argumentos)\\
+\hline
+\end{DoxyParams}
+En este main usamos la función Leer\+Imagen\+P\+GM del módulo imagen\+ES, y leemos la imagen indicada, usamos el constructor de la clase \hyperlink{classImagen}{Imagen} con el array generado y usamos la función umbralizar sobre ese objeto de la clase \hyperlink{classImagen}{Imagen}. Posteriormente, usamos la función de la clase \hyperlink{classImagen}{Imagen} convertir\+\_\+a\+\_\+\+Array(byte$\ast$) para transformarla en un tipo de dato válido para la función de imagen\+ES Escribir\+Imagen\+P\+GM(...), liberamos la memoria del array y el destructor de la clase \hyperlink{classImagen}{Imagen} se encarga de liberar la memoria ocupadas por las imágenes creadas. \mbox{\Hypertarget{1umbralizar_8cpp_a22ca53c3d563431b6c6f39628cd8f701}\label{1umbralizar_8cpp_a22ca53c3d563431b6c6f39628cd8f701}} 
+\index{1umbralizar.\+cpp@{1umbralizar.\+cpp}!umbralizar@{umbralizar}}
+\index{umbralizar@{umbralizar}!1umbralizar.\+cpp@{1umbralizar.\+cpp}}
+\subsubsection{\texorpdfstring{umbralizar()}{umbralizar()}}
+{\footnotesize\ttfamily \hyperlink{classImagen}{Imagen} umbralizar (\begin{DoxyParamCaption}\item[{const \hyperlink{classImagen}{Imagen} \&}]{original,  }\item[{const byte}]{T\+\_\+1,  }\item[{const byte}]{T\+\_\+2 }\end{DoxyParamCaption})}
+
+
+
+Umbralizar. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em original} & La imagen a umbralizar \\
+\hline
+{\em T\+\_\+1} & El umbral inferior (cualquier pixel por debajo se establece a 255) \\
+\hline
+{\em T\+\_\+2} & El umbral superior (cualquier pixel por encima se establece a 255) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+La imagen umbralizada 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+T\+\_\+1 $<$ T\+\_\+2
+\end{DoxyPrecond}
+Función que establece los valores de los píxeles más extremos tanto inferior(por debajo del umbral inferior), como superiormente (por encima del umbral superior) al nivel máximo de luminosidad (blanco) 

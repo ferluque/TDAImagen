@@ -1,0 +1,331 @@
+\hypertarget{classImagen}{}\section{Referencia de la Clase Imagen}
+\label{classImagen}\index{Imagen@{Imagen}}
+
+
+T.\+D.\+A \hyperlink{classImagen}{Imagen}.  
+
+
+
+
+{\ttfamily \#include $<$Imagen.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classImagen_ab2e649aa7a105155c7bfdb846abf0528}{Imagen} ()
+\begin{DoxyCompactList}\small\item\em Constructor sin parámetros. \end{DoxyCompactList}\item 
+\hyperlink{classImagen_a70437d2848ae5b030ee17cf79651a8b5}{Imagen} (const \hyperlink{classImagen}{Imagen} \&J)
+\begin{DoxyCompactList}\small\item\em Constructor de copia. \end{DoxyCompactList}\item 
+\hyperlink{classImagen_ad4943ff0e2de31d4c25a879030f3ebf2}{Imagen} (int filas, int cols)
+\begin{DoxyCompactList}\small\item\em Constructor con parámetros. \end{DoxyCompactList}\item 
+\hyperlink{classImagen_a9630d5a1b9896c9b132a76e8015c1ed2}{Imagen} (int filas, int cols, byte $\ast$array)
+\begin{DoxyCompactList}\small\item\em Constructor a partir de los datos leídos por la función E/S. \end{DoxyCompactList}\item 
+\hyperlink{classImagen_a03dd93c9cf920a9dc0b72f8bd34f2e8a}{$\sim$\+Imagen} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classImagen}{Imagen} \& \hyperlink{classImagen_a2d30fa014a342dbf0f9d992be6838adf}{operator=} (const \hyperlink{classImagen}{Imagen} \&otra)
+\begin{DoxyCompactList}\small\item\em Operador de asignación. \end{DoxyCompactList}\item 
+int \hyperlink{classImagen_a4cb4faa04f5e2913965e43a6a65acfd1}{num\+\_\+filas} () const
+\begin{DoxyCompactList}\small\item\em Método consultor número de filas. \end{DoxyCompactList}\item 
+int \hyperlink{classImagen_ac28d55c18064aea2a65e6fcf51d86191}{num\+\_\+columnas} () const
+\begin{DoxyCompactList}\small\item\em Método consultor número de columnas. \end{DoxyCompactList}\item 
+void \hyperlink{classImagen_af9ac39daf075288473967839d9a0d2d8}{asigna\+\_\+pixel} (int fila, int col, byte valor)
+\begin{DoxyCompactList}\small\item\em Set casillas\mbox{[}fila\mbox{]}\mbox{[}col\mbox{]} = valor. \end{DoxyCompactList}\item 
+byte \hyperlink{classImagen_a7d9378695a7fd2dce8092f180e716229}{valor\+\_\+pixel} (int fila, int col) const
+\begin{DoxyCompactList}\small\item\em Consultor casillas\mbox{[}fila\mbox{]}\mbox{[}col\mbox{]}. \end{DoxyCompactList}\item 
+void \hyperlink{classImagen_a22e4df82f04b96f681af25a95b5d976f}{convertir\+\_\+a\+\_\+\+Array} (byte $\ast$array)
+\begin{DoxyCompactList}\small\item\em Función que introduce la imagen que invoca el método en el array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Métodos privados}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classImagen_a413866cbb4ddb48f512877e75a73eba3}{copiar} (const \hyperlink{classImagen}{Imagen} \&J)
+\begin{DoxyCompactList}\small\item\em Método auxiliar de copia (no libera memoria) \end{DoxyCompactList}\item 
+void \hyperlink{classImagen_affa85e2b6da3fb00c71b96653693d09b}{allocate} (int filas, int columnas)
+\begin{DoxyCompactList}\small\item\em Método de reserva de memoria para una matriz. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classImagen_a50bdabe1d37bc418b2076e70a5a8402c}\label{classImagen_a50bdabe1d37bc418b2076e70a5a8402c}} 
+void \hyperlink{classImagen_a50bdabe1d37bc418b2076e70a5a8402c}{deallocate} ()
+\begin{DoxyCompactList}\small\item\em Método auxiliar de liberación de memoria. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classImagen_ae057b7b7de2b7d6371f9c89fdc3358fe}{nf}
+\item 
+int \hyperlink{classImagen_a0921ad9dff3caf6bb4d86eb7c1aeba60}{nc}
+\item 
+byte $\ast$$\ast$ \hyperlink{classImagen_a151b692f46d9acc42be59fc0fdc50529}{casillas}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+T.\+D.\+A \hyperlink{classImagen}{Imagen}. 
+
+Una instancia {\itshape i} del tipo de dato abstracto {\ttfamily \hyperlink{classImagen}{Imagen}} es un objeto que representa una matriz de un tamaño nf x nc, donde se reflejan los valores de luminosidad de una imagen en escala de grises (valores entre 0 y 255)
+
+\begin{DoxyAuthor}{Autor}
+Fernando Luque (\href{mailto:fl1562001@correo.ugr.es}{\tt fl1562001@correo.\+ugr.\+es}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+Octubre 2020 
+\end{DoxyDate}
+
+
+\subsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classImagen_ab2e649aa7a105155c7bfdb846abf0528}\label{classImagen_ab2e649aa7a105155c7bfdb846abf0528}} 
+\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{Imagen()}{Imagen()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Imagen\+::\+Imagen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor sin parámetros. 
+
+Inicializa una imagen de 0filasx0columnas \mbox{\Hypertarget{classImagen_a70437d2848ae5b030ee17cf79651a8b5}\label{classImagen_a70437d2848ae5b030ee17cf79651a8b5}} 
+\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{Imagen()}{Imagen()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Imagen\+::\+Imagen (\begin{DoxyParamCaption}\item[{const \hyperlink{classImagen}{Imagen} \&}]{J }\end{DoxyParamCaption})}
+
+
+
+Constructor de copia. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em J} & La imagen a copiar\\
+\hline
+\end{DoxyParams}
+Hace su respectiva reserva de memoria en función del tamaño del parámetro, y copia todos los elementos uno a uno \mbox{\Hypertarget{classImagen_ad4943ff0e2de31d4c25a879030f3ebf2}\label{classImagen_ad4943ff0e2de31d4c25a879030f3ebf2}} 
+\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{Imagen()}{Imagen()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Imagen\+::\+Imagen (\begin{DoxyParamCaption}\item[{int}]{filas,  }\item[{int}]{cols }\end{DoxyParamCaption})}
+
+
+
+Constructor con parámetros. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em filas} & El número de filas \\
+\hline
+{\em cols} & El número de columnas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+filas $>$ 0 \&\& cols $>$ 0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Los valores de las casillas no se inicializan 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Atención}
+NO se inicializan los valores de las casillas
+\end{DoxyWarning}
+Se hace la reserva dinámica de una matriz de tamaño filas x columnas \mbox{\Hypertarget{classImagen_a9630d5a1b9896c9b132a76e8015c1ed2}\label{classImagen_a9630d5a1b9896c9b132a76e8015c1ed2}} 
+\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{Imagen()}{Imagen()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Imagen\+::\+Imagen (\begin{DoxyParamCaption}\item[{int}]{filas,  }\item[{int}]{cols,  }\item[{byte $\ast$}]{array }\end{DoxyParamCaption})}
+
+
+
+Constructor a partir de los datos leídos por la función E/S. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em filas} & El número de filas de la imagen \\
+\hline
+{\em cols} & El número de columnas de la imagen \\
+\hline
+{\em array} & El vector con los datos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondición}
+La imagen queda inicializada
+\end{DoxyPostcond}
+Se inicializa una matriz a partir de los datos que recibimos de la función del módulo imagen\+ES, filas, columnas y un array unidimensional con los valores de luminosidad \mbox{\Hypertarget{classImagen_a03dd93c9cf920a9dc0b72f8bd34f2e8a}\label{classImagen_a03dd93c9cf920a9dc0b72f8bd34f2e8a}} 
+\index{Imagen@{Imagen}!````~Imagen@{$\sim$\+Imagen}}
+\index{````~Imagen@{$\sim$\+Imagen}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{$\sim$\+Imagen()}{~Imagen()}}
+{\footnotesize\ttfamily Imagen\+::$\sim$\+Imagen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Se libera la memoria dinámica ocupada por la imagen 
+
+\subsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classImagen_affa85e2b6da3fb00c71b96653693d09b}\label{classImagen_affa85e2b6da3fb00c71b96653693d09b}} 
+\index{Imagen@{Imagen}!allocate@{allocate}}
+\index{allocate@{allocate}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{allocate()}{allocate()}}
+{\footnotesize\ttfamily void Imagen\+::allocate (\begin{DoxyParamCaption}\item[{int}]{filas,  }\item[{int}]{columnas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Método de reserva de memoria para una matriz. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em filas} & El número de filas \\
+\hline
+{\em columnas} & El número de columnas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+filas $>$ 0 \&\& columnas $>$ 0 
+\end{DoxyPrecond}
+\begin{DoxyWarning}{Atención}
+NO libera la memoria previamente ocupada 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classImagen_af9ac39daf075288473967839d9a0d2d8}\label{classImagen_af9ac39daf075288473967839d9a0d2d8}} 
+\index{Imagen@{Imagen}!asigna\+\_\+pixel@{asigna\+\_\+pixel}}
+\index{asigna\+\_\+pixel@{asigna\+\_\+pixel}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{asigna\+\_\+pixel()}{asigna\_pixel()}}
+{\footnotesize\ttfamily void Imagen\+::asigna\+\_\+pixel (\begin{DoxyParamCaption}\item[{int}]{fila,  }\item[{int}]{col,  }\item[{byte}]{valor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set casillas\mbox{[}fila\mbox{]}\mbox{[}col\mbox{]} = valor. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em fila} & La fila del elemento \\
+\hline
+{\em col} & La columna del elemento \\
+\hline
+{\em valor} & El valor a establecer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+0$<$=fila$<$\hyperlink{classImagen_a4cb4faa04f5e2913965e43a6a65acfd1}{num\+\_\+filas()} \&\& 0$<$=col$<$\hyperlink{classImagen_ac28d55c18064aea2a65e6fcf51d86191}{num\+\_\+columnas()} \&\& 0$<$=valor$<$=255 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classImagen_a22e4df82f04b96f681af25a95b5d976f}\label{classImagen_a22e4df82f04b96f681af25a95b5d976f}} 
+\index{Imagen@{Imagen}!convertir\+\_\+a\+\_\+\+Array@{convertir\+\_\+a\+\_\+\+Array}}
+\index{convertir\+\_\+a\+\_\+\+Array@{convertir\+\_\+a\+\_\+\+Array}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{convertir\+\_\+a\+\_\+\+Array()}{convertir\_a\_Array()}}
+{\footnotesize\ttfamily void Imagen\+::convertir\+\_\+a\+\_\+\+Array (\begin{DoxyParamCaption}\item[{byte $\ast$}]{array }\end{DoxyParamCaption})}
+
+
+
+Función que introduce la imagen que invoca el método en el array. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em array} & El array donde se introducirán los datos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+Se espera un puntero nulo 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classImagen_a413866cbb4ddb48f512877e75a73eba3}\label{classImagen_a413866cbb4ddb48f512877e75a73eba3}} 
+\index{Imagen@{Imagen}!copiar@{copiar}}
+\index{copiar@{copiar}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{copiar()}{copiar()}}
+{\footnotesize\ttfamily void Imagen\+::copiar (\begin{DoxyParamCaption}\item[{const \hyperlink{classImagen}{Imagen} \&}]{J }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Método auxiliar de copia (no libera memoria) 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em J} & La imagen a copiar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Atención}
+NO hace la reserva y liberación de memoria del objeto llamante 
+\end{DoxyWarning}
+\mbox{\Hypertarget{classImagen_ac28d55c18064aea2a65e6fcf51d86191}\label{classImagen_ac28d55c18064aea2a65e6fcf51d86191}} 
+\index{Imagen@{Imagen}!num\+\_\+columnas@{num\+\_\+columnas}}
+\index{num\+\_\+columnas@{num\+\_\+columnas}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{num\+\_\+columnas()}{num\_columnas()}}
+{\footnotesize\ttfamily int Imagen\+::num\+\_\+columnas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Método consultor número de columnas. 
+
+\begin{DoxyReturn}{Devuelve}
+nc 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImagen_a4cb4faa04f5e2913965e43a6a65acfd1}\label{classImagen_a4cb4faa04f5e2913965e43a6a65acfd1}} 
+\index{Imagen@{Imagen}!num\+\_\+filas@{num\+\_\+filas}}
+\index{num\+\_\+filas@{num\+\_\+filas}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{num\+\_\+filas()}{num\_filas()}}
+{\footnotesize\ttfamily int Imagen\+::num\+\_\+filas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Método consultor número de filas. 
+
+\begin{DoxyReturn}{Devuelve}
+nf 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classImagen_a2d30fa014a342dbf0f9d992be6838adf}\label{classImagen_a2d30fa014a342dbf0f9d992be6838adf}} 
+\index{Imagen@{Imagen}!operator=@{operator=}}
+\index{operator=@{operator=}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{classImagen}{Imagen}\& Imagen\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classImagen}{Imagen} \&}]{otra }\end{DoxyParamCaption})}
+
+
+
+Operador de asignación. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em otra} & La imagen a asignar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+La imagen asignada por referencia para asignaciones encadenadas
+\end{DoxyReturn}
+Se libera previamente la memoria que tuviera ocupada la imagen y se hace una copia en memoria de la imagen pasada como parámetro \mbox{\Hypertarget{classImagen_a7d9378695a7fd2dce8092f180e716229}\label{classImagen_a7d9378695a7fd2dce8092f180e716229}} 
+\index{Imagen@{Imagen}!valor\+\_\+pixel@{valor\+\_\+pixel}}
+\index{valor\+\_\+pixel@{valor\+\_\+pixel}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{valor\+\_\+pixel()}{valor\_pixel()}}
+{\footnotesize\ttfamily byte Imagen\+::valor\+\_\+pixel (\begin{DoxyParamCaption}\item[{int}]{fila,  }\item[{int}]{col }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Consultor casillas\mbox{[}fila\mbox{]}\mbox{[}col\mbox{]}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em fila} & La fila del elemento a consultar \\
+\hline
+{\em col} & La columna del elemento a consultar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+casillas\mbox{[}fila\mbox{]}\mbox{[}col\mbox{]} 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+0$<$=fila$<$\hyperlink{classImagen_a4cb4faa04f5e2913965e43a6a65acfd1}{num\+\_\+filas()} \&\& 0$<$=col$<$\hyperlink{classImagen_ac28d55c18064aea2a65e6fcf51d86191}{num\+\_\+columnas()} 
+\end{DoxyPrecond}
+
+
+\subsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{classImagen_a151b692f46d9acc42be59fc0fdc50529}\label{classImagen_a151b692f46d9acc42be59fc0fdc50529}} 
+\index{Imagen@{Imagen}!casillas@{casillas}}
+\index{casillas@{casillas}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{casillas}{casillas}}
+{\footnotesize\ttfamily byte$\ast$$\ast$ Imagen\+::casillas\hspace{0.3cm}{\ttfamily [private]}}
+
+matriz \mbox{\Hypertarget{classImagen_a0921ad9dff3caf6bb4d86eb7c1aeba60}\label{classImagen_a0921ad9dff3caf6bb4d86eb7c1aeba60}} 
+\index{Imagen@{Imagen}!nc@{nc}}
+\index{nc@{nc}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{nc}{nc}}
+{\footnotesize\ttfamily int Imagen\+::nc\hspace{0.3cm}{\ttfamily [private]}}
+
+columnas \mbox{\Hypertarget{classImagen_ae057b7b7de2b7d6371f9c89fdc3358fe}\label{classImagen_ae057b7b7de2b7d6371f9c89fdc3358fe}} 
+\index{Imagen@{Imagen}!nf@{nf}}
+\index{nf@{nf}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{nf}{nf}}
+{\footnotesize\ttfamily int Imagen\+::nf\hspace{0.3cm}{\ttfamily [private]}}
+
+filas 
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+inc/\hyperlink{Imagen_8h}{Imagen.\+h}\end{DoxyCompactItemize}

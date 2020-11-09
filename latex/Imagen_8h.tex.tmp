@@ -1,0 +1,29 @@
+\hypertarget{Imagen_8h}{}\section{Referencia del Archivo inc/\+Imagen.h}
+\label{Imagen_8h}\index{inc/\+Imagen.\+h@{inc/\+Imagen.\+h}}
+
+
+Fichero de cabecera para la clase \hyperlink{classImagen}{Imagen}.  
+
+
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 0
+\subsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classImagen}{Imagen}
+\begin{DoxyCompactList}\small\item\em T.\+D.\+A \hyperlink{classImagen}{Imagen}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{Imagen_8h_a0c8186d9b9b7880309c27230bbb5e69d}\label{Imagen_8h_a0c8186d9b9b7880309c27230bbb5e69d}} 
+typedef unsigned char {\bfseries byte}
+\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Fichero de cabecera para la clase \hyperlink{classImagen}{Imagen}. 
+
+\begin{DoxyAuthor}{Autor}
+Fernando Luque (\href{mailto:fl1562001@correo.ugr.es}{\tt fl1562001@correo.\+ugr.\+es})
+\end{DoxyAuthor}
+Declara un T\+DA \hyperlink{classImagen}{Imagen} que nos permite representar imágenes en formato P\+GM 

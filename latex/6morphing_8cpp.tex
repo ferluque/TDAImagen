@@ -1,0 +1,82 @@
+\hypertarget{6morphing_8cpp}{}\section{Referencia del Archivo src/6morphing.cpp}
+\label{6morphing_8cpp}\index{src/6morphing.\+cpp@{src/6morphing.\+cpp}}
+
+
+Fichero con la función morphing y su prueba.  
+
+
+{\ttfamily \#include \char`\"{}Imagen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}imagen\+E\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Dependencia gráfica adjunta para 6morphing.cpp\+:
+% FIG 0
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classImagen}{Imagen} \hyperlink{6morphing_8cpp_ab7f9a7b1a52f6cc8f4df33205943673b}{Morphing} (const \hyperlink{classImagen}{Imagen} \&origen, const \hyperlink{classImagen}{Imagen} \&destino, const float alpha\+\_\+i)
+\begin{DoxyCompactList}\small\item\em Función morphing entre dos imágenes. \end{DoxyCompactList}\item 
+int \hyperlink{6morphing_8cpp_ae3d191cbd032819070b789079ea0faaf}{main} (int nargs, char $\ast$args\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em main de morphing \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Fichero con la función morphing y su prueba. 
+
+\begin{DoxyAuthor}{Autor}
+Fernando Luque (\href{mailto:fl1562001@correo.ugr.es}{\tt fl1562001@correo.\+ugr.\+es}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+Octubre 2020
+\end{DoxyDate}
+Para llamar al ejecutable correspondiente $<$ruta\+\_\+ejecutable$>$ $<$imagen\+\_\+origen$>$ $<$imagen\+\_\+destino$>$ \mbox{[}$<$im ágenes=\char`\"{}\char`\"{} intermedias$>$=\char`\"{}\char`\"{}$>$\mbox{]}. Con el objetivo de \char`\"{}automatizar\char`\"{} la generación de los nombres de ficheros de las imágenes intermedias que generará el morhping, he realizado un pequeño \char`\"{}script\char`\"{} en ruby, \char`\"{}generador\+\_\+argumentos.\+rb\char`\"{}, el cual al ejecutarlo en la terminal de la siguiente manera\+:~\newline
+\begin{quote}
+ruby generador\+\_\+argumentos.\+rb $>$ argumentos.\+txt~\newline
+\end{quote}
+nos incluirá en el archivo argumentos.\+txt una lista con todas las rutas de las imágenes intermedias que pasaremos como parámetros al correspondiente ejecutable (bin/6morphing) 
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{6morphing_8cpp_ae3d191cbd032819070b789079ea0faaf}\label{6morphing_8cpp_ae3d191cbd032819070b789079ea0faaf}} 
+\index{6morphing.\+cpp@{6morphing.\+cpp}!main@{main}}
+\index{main@{main}!6morphing.\+cpp@{6morphing.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{nargs,  }\item[{char $\ast$}]{args\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+main de morphing 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nargs} & La cantidad de argumentos \\
+\hline
+{\em args} & Los argumentos\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{Ver también}
+\hyperlink{1umbralizar_8cpp}{1umbralizar.\+cpp} El procedimiento para la entrada y salida es similar al seguido en el \hyperlink{6morphing_8cpp_ae3d191cbd032819070b789079ea0faaf}{main} de \hyperlink{1umbralizar_8cpp}{1umbralizar.\+cpp}
+\end{DoxySeeAlso}
+Tal y como he orientado este ejercicio, la función morphing me genera la i-\/ésima \hyperlink{classImagen}{Imagen} intermedia entre una de origen y una de final, es por eso que incluyo esta función en un bucle, en el que se sacan las pasos (pasos=cantidad de imágenes intermedias =nargs-\/3) imágenes con la función Escribir\+Imagen\+P\+GM(...) del módulo imagen\+ES \mbox{\Hypertarget{6morphing_8cpp_ab7f9a7b1a52f6cc8f4df33205943673b}\label{6morphing_8cpp_ab7f9a7b1a52f6cc8f4df33205943673b}} 
+\index{6morphing.\+cpp@{6morphing.\+cpp}!Morphing@{Morphing}}
+\index{Morphing@{Morphing}!6morphing.\+cpp@{6morphing.\+cpp}}
+\subsubsection{\texorpdfstring{Morphing()}{Morphing()}}
+{\footnotesize\ttfamily \hyperlink{classImagen}{Imagen} Morphing (\begin{DoxyParamCaption}\item[{const \hyperlink{classImagen}{Imagen} \&}]{origen,  }\item[{const \hyperlink{classImagen}{Imagen} \&}]{destino,  }\item[{const float}]{alpha\+\_\+i }\end{DoxyParamCaption})}
+
+
+
+Función morphing entre dos imágenes. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em origen} & La imagen inicial \\
+\hline
+{\em destino} & La imagen a la que llegará el morphing \\
+\hline
+{\em i} & El índice de imagen intermedia que vamos a generar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+La i-\/ésima imagen generada por el proceso de morphing
+\end{DoxyReturn}
+Esta función genera la i-\/ésima imagen intermedia entre otras dos, asignando a cada píxel el siguiente valor\+:~\newline
+alpha\+\_\+i$\ast$O(x,y) + (1-\/alpha\+\_\+i)$\ast$D(x,y)~\newline
+donde alpha\+\_\+i es un valor entre 0 y 1, que valdrá alpha\+\_\+i = i/pasos, siendo pasos el número de imágenes intermedias que generamos 

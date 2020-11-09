@@ -1,0 +1,121 @@
+\hypertarget{5contraste_8cpp}{}\section{Referencia del Archivo src/5contraste.cpp}
+\label{5contraste_8cpp}\index{src/5contraste.\+cpp@{src/5contraste.\+cpp}}
+
+
+Fichero con la función contraste y su prueba.  
+
+
+{\ttfamily \#include \char`\"{}Imagen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}imagen\+E\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Dependencia gráfica adjunta para 5contraste.cpp\+:
+% FIG 0
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classImagen}{Imagen} \hyperlink{5contraste_8cpp_a98243cc59bac55a2491706999bee13ab}{Contraste} (const \hyperlink{classImagen}{Imagen} \&original, const byte min, const byte max)
+\begin{DoxyCompactList}\small\item\em Función contraste. \end{DoxyCompactList}\item 
+byte \hyperlink{5contraste_8cpp_aa5aa15f150ddd3ab0819884e7b7b20b1}{minimo} (const \hyperlink{classImagen}{Imagen} \&imagen)
+\begin{DoxyCompactList}\small\item\em Función mínimo en \hyperlink{classImagen}{Imagen}. \end{DoxyCompactList}\item 
+byte \hyperlink{5contraste_8cpp_a69c5390bdc19ccacf27e357ccc289c04}{maximo} (const \hyperlink{classImagen}{Imagen} \&imagen)
+\begin{DoxyCompactList}\small\item\em Función máximo en \hyperlink{classImagen}{Imagen}. \end{DoxyCompactList}\item 
+int \hyperlink{5contraste_8cpp_ae3d191cbd032819070b789079ea0faaf}{main} (int nargs, char $\ast$args\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em main de contraste \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Fichero con la función contraste y su prueba. 
+
+\begin{DoxyAuthor}{Autor}
+Fernando Luque (\href{mailto:fl1562001@correo.ugr.es}{\tt fl1562001@correo.\+ugr.\+es}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+Octubre 2020
+\end{DoxyDate}
+Para llamar al ejecutable correspondiente $<$ruta\+\_\+ejecutable$>$ $<$imagen\+\_\+origen$>$ $<$minimo$>$ $<$maximo$>$ $<$imagen\+\_\+destino$>$ 
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{5contraste_8cpp_a98243cc59bac55a2491706999bee13ab}\label{5contraste_8cpp_a98243cc59bac55a2491706999bee13ab}} 
+\index{5contraste.\+cpp@{5contraste.\+cpp}!Contraste@{Contraste}}
+\index{Contraste@{Contraste}!5contraste.\+cpp@{5contraste.\+cpp}}
+\subsubsection{\texorpdfstring{Contraste()}{Contraste()}}
+{\footnotesize\ttfamily \hyperlink{classImagen}{Imagen} Contraste (\begin{DoxyParamCaption}\item[{const \hyperlink{classImagen}{Imagen} \&}]{original,  }\item[{const byte}]{min,  }\item[{const byte}]{max }\end{DoxyParamCaption})}
+
+
+
+Función contraste. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em original} & La imagen a la que aplicar el contraste \\
+\hline
+{\em min} & El valor mínimo de luminosidad indicado en la llamada al ejecutable \\
+\hline
+{\em max} & El valor máximo de luminosidad indicado en la llamada al ejecutable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+La imagen resultante de aplicar el filtro de contraste indicado a la imagen original
+\end{DoxyReturn}
+Esta función asigna a cada pixel el siguiente valor\+:~\newline
+min + \mbox{[}((max – min) / (b – a)) $\ast$ (z – a)\mbox{]}~\newline
+donde min y max son los parámetros indicados por el usuario en la llamada al ejecutable, b el valor máximo de luminosidad en la imagen original, a el mínimo, y z el valor de cada píxel. \mbox{\Hypertarget{5contraste_8cpp_ae3d191cbd032819070b789079ea0faaf}\label{5contraste_8cpp_ae3d191cbd032819070b789079ea0faaf}} 
+\index{5contraste.\+cpp@{5contraste.\+cpp}!main@{main}}
+\index{main@{main}!5contraste.\+cpp@{5contraste.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{nargs,  }\item[{char $\ast$}]{args\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+main de contraste 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em nargs} & El número de argumentos \\
+\hline
+{\em args} & El array de cadenas de caracteres (argumentos) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+0 Si correcto -\/1 Si hay problema con la cantidad de argumentos
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Ver también}
+\hyperlink{1umbralizar_8cpp}{1umbralizar.\+cpp} El procedimiento para la entrada salida es similar al seguido en el \hyperlink{5contraste_8cpp_ae3d191cbd032819070b789079ea0faaf}{main} de \hyperlink{1umbralizar_8cpp}{1umbralizar.\+cpp}.~\newline
+
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{5contraste_8cpp_a69c5390bdc19ccacf27e357ccc289c04}\label{5contraste_8cpp_a69c5390bdc19ccacf27e357ccc289c04}} 
+\index{5contraste.\+cpp@{5contraste.\+cpp}!maximo@{maximo}}
+\index{maximo@{maximo}!5contraste.\+cpp@{5contraste.\+cpp}}
+\subsubsection{\texorpdfstring{maximo()}{maximo()}}
+{\footnotesize\ttfamily byte maximo (\begin{DoxyParamCaption}\item[{const \hyperlink{classImagen}{Imagen} \&}]{imagen }\end{DoxyParamCaption})}
+
+
+
+Función máximo en \hyperlink{classImagen}{Imagen}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em imagen} & La imagen de la cual encontraremos el máximo valor de luminosidad \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+El máximo valor de luminosidad en la imagen 
+\end{DoxyReturn}
+\mbox{\Hypertarget{5contraste_8cpp_aa5aa15f150ddd3ab0819884e7b7b20b1}\label{5contraste_8cpp_aa5aa15f150ddd3ab0819884e7b7b20b1}} 
+\index{5contraste.\+cpp@{5contraste.\+cpp}!minimo@{minimo}}
+\index{minimo@{minimo}!5contraste.\+cpp@{5contraste.\+cpp}}
+\subsubsection{\texorpdfstring{minimo()}{minimo()}}
+{\footnotesize\ttfamily byte minimo (\begin{DoxyParamCaption}\item[{const \hyperlink{classImagen}{Imagen} \&}]{imagen }\end{DoxyParamCaption})}
+
+
+
+Función mínimo en \hyperlink{classImagen}{Imagen}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em imagen} & La imagen de la cual encontraremos el mínimo valor de luminosidad \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+El mínimo valor de luminosidad en la imagen 
+\end{DoxyReturn}
