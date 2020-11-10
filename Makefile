@@ -2,22 +2,35 @@ BIN = bin
 OBJ = obj
 SRC = src
 INC = inc
+LIB = lib
 
-$(BIN)/1umbralizar: $(OBJ)/1umbralizar.o $(OBJ)/Imagen.o $(OBJ)/imagenES.o
+$(BIN)/1umbralizar: $(LIB)/libUmbralizar.a
 	echo Creando 1umbralizar
-	g++ $^ -o $@
+	g++ -L./$(LIB)/ -lUmbralizar -o $@
 
-$(BIN)/3zoom: $(OBJ)/3zoom.o $(OBJ)/Imagen.o $(OBJ)/imagenES.o
+$(BIN)/3zoom: $(LIB)/libZoom.a
 	echo Creando 3zoom
-	g++ $^ -o $@
+	g++ -L./$(LIB)/ -lZoom -o $@
 
-$(BIN)/5contraste: $(OBJ)/5contraste.o $(OBJ)/Imagen.o $(OBJ)/imagenES.o
+$(BIN)/5contraste: $(LIB)/libContraste.a
 	echo Creando 5contraste
-	g++ $^ -o $@
+	g++ -L./$(LIB)/ -lContraste -o $@
 
-$(BIN)/6morphing: $(OBJ)/6morphing.o $(OBJ)/Imagen.o $(OBJ)/imagenES.o
+$(BIN)/6morphing: $(LIB)/libMorphing.a
 	echo Creando 6morphing
-	g++ $^ -o $@
+	g++ -L./$(LIB)/ -lMorphing -o $@
+
+$(LIB)/libUmbralizar.a: $(OBJ)/1umbralizar.o $(OBJ)/Imagen.o $(OBJ)/imagenES.o
+	ar rvs $@ $^
+
+$(LIB)/libZoom.a: $(OBJ)/3zoom.o $(OBJ)/Imagen.o $(OBJ)/imagenES.o
+	ar rvs $@ $^
+
+$(LIB)/libContraste.a: $(OBJ)/5contraste.o $(OBJ)/Imagen.o $(OBJ)/imagenES.o
+	ar rvs $@ $^
+
+$(LIB)/libMorphing.a: $(OBJ)/6morphing.o $(OBJ)/Imagen.o $(OBJ)/imagenES.o
+	ar rvs $@ $^
 
 $(OBJ)/1umbralizar.o: $(SRC)/1umbralizar.cpp $(INC)/Imagen.h $(INC)/imagenES.h
 	echo Creando 1umbralizar.o
@@ -43,7 +56,7 @@ $(OBJ)/imagenES.o: $(SRC)/imagenES.cpp $(INC)/imagenES.h
 
 clean:
 	echo Limpiando
-	-rm $(OBJ)/* $(BIN)/*
+	-rm $(OBJ)/* $(BIN)/* $(LIB)/*
 
 all: clean $(BIN)/1umbralizar $(BIN)/3zoom $(BIN)/5contraste $(BIN)/6morphing
 

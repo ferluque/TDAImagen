@@ -60,7 +60,7 @@ int main(int nargs, char* args[]) {
     }
 
     char* origen = args[1];
-    char* destino = args[6];
+    char* destino = args[4];
     
     cout << endl;
     cout << "Fichero origen: " << origen << endl;
