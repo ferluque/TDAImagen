@@ -4,7 +4,7 @@
  * @author Fernando Luque (fl1562001@correo.ugr.es)
  * @date Octubre 2020
  * 
- * Para llamar al ejecutable correspondiente <ruta_ejecutable> <imagen_origen> <umbral_min> <umbral_max> <imagen_destino>
+ * Para llamar al ejecutable correspondiente <ejecutable> <imagen_origen> <umbral_min> <umbral_max> <imagen_destino>
  */
 
 #include "Imagen.h"
